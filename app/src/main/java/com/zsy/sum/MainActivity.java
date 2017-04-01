@@ -1,13 +1,22 @@
 package com.zsy.sum;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import com.zsy.lib.ui.test.TestActivity;
+import com.zsy.lib.utils.depend.Lg;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.Arrays;
+
+public class MainActivity extends TestActivity {
+
+
+    private final String[] dataArr = {"signUp", "signIn", "signOut"};
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public void initActions() {
+        datas = Arrays.asList(dataArr);
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Lg.i(dataArr[position]);
     }
 }
